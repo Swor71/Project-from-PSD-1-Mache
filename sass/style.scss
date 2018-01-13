@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,700,900&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Droid+Serif:700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+$lato: 'Lato', sans-serif;
+$mache-pink: #ed145b;
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: $lato;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.container-fluid {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.hero {
+	background-image: url(/images/hero.png);
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: 50%;
+	height: 100vh;
+	background-repeat: no-repeat;
+	color: #fff;
+
+	.header-section {
+		height: 100%;
+		display: grid;
+		grid-template-columns: 150px 1fr;
+		grid-template-rows: 60px auto;
+		grid-template-areas: 
+		"logo nav"
+		"hero hero";
+		.logo {
+			grid-area: logo;
+			align-self: end;
+			justify-self: end;
+		}
+
+		.list {
+			grid-area: nav;
+			align-self: end;
+			justify-self: end;
+
+			li {
+				display: inline;
+				letter-spacing: 0.4px;
+				font-weight: 700;
+				padding-left: 10px;
+				a {
+					list-style-type: none;
+					text-decoration: none;
+					color: #fff;
+					transition: 0.4s;
+					&:hover {
+						color: $mache-pink;
+					}
+				}	
+			}	
+		}
+
+		.hero-text {
+			text-align: center;
+			grid-area: hero;
+			align-self: center;
+			justify-self: center;
+			h1 {
+				
+				font-family: $lato;
+				font-size: 46px;
+				letter-spacing: 1.15px;
+				text-transform: uppercase;
+				font-weight: 300;
+
+				span {
+					font-weight: 900;
+				}
+				&::after {
+					content: '';
+					display: block;
+					border-bottom: 2px solid $mache-pink;
+					width: 200px;
+					margin: 40px auto;
+				}
+			}
+
+			p {
+				grid-area: hero;
+				font-weight: 300;
+				letter-spacing: 0.55px;
+				font-size: 22px;
+				line-height: 38px;
+			}
+		}
+		.btn {
+			width: 200px;
+			height: 50px;
+			border-radius: 25px;
+			background-color: $mache-pink;
+			border: none;
+			text-transform: uppercase;
+			color: #fff;
+			letter-spacing: 0.38px;
+			font-family: $lato;
+			font-weight: 700;
+			margin-top: 65px;
+			cursor: pointer;
+			transition: 0.4s;
+			&:hover {
+				border: 1px solid $mache-pink;
+				background-color: transparent;
+				color: $mache-pink;
+			}
+		}
+	}
+
+	.about-section {
+		height: 600px;
+	}
+	
+	
+	
+}
